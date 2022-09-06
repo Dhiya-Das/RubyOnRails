@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<% @users = User.all %>
+<% @tasks = Task.all%>
+<% @users.each do |user| %>
+<h4> User ID: <%= user.id %><br/> </h4> 
+<h4> First Name: <%= user.firstname %><br/> </h4>
+<h4> Last Name: <%= user.lastname %><br/> </h4> 
+<h4> Date of Birth: <%= user.dob %><br/> </h4> 
+<h4> Mail ID:  <%= user.email %><br/></h4> 
+  <br>
+<% end %>

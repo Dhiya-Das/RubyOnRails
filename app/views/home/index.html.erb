@@ -1,0 +1,21 @@
+<style>
+.button {
+  background-color: hsl(0, 100%, 70%);;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+<div class="home">
+    <h1> Hai! Lets create tasks </h1> <br> <br>
+    
+   <div class="button"> <%= link_to 'Tasks', tasks_path %> </div>
+   <div class="button"> <%= link_to 'Users', users_path %> </div>
+</div>

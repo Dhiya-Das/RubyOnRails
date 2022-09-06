@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasklist</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <style>
+.button {
+  background-color: hsl(0, 100%, 70%);;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+  </head>
+
+  <body>
+      <div class="button"> <%= link_to 'Home Page', root_path %> </div>
+      <div class="button"> <%= link_to 'Sign In', new_user_session_path %> </div>
+      
+      <% if user_signed_in? %>
+      
+      <div class="button"> <%= link_to 'Edit User / Delete User', edit_user_registration_path %> </div>
+        
+       <div class="button"> <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>  </div>
+      <% end %>
+    
+       <div class="button">  <%= link_to 'Sign Up', new_user_registration_path %>  </div> 
+      
+     
+    
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+      
+    <%= yield %>
+      
+      
+
+      
+  </body>
+</html>
