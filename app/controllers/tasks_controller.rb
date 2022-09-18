@@ -2,16 +2,33 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
-
+  protect_from_forgery with: :null_session
   # GET /tasks or /tasks.json
   def index
     @tasks = Task.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+          
+         render pdf: "task",
+                page_size: 'A4',
+                template: "tasks/index",
+                layout: "application",
+                orientation: "Landscape",
+                lowquality: true,
+                zoom: 1,
+                dpi: 75
+               
+               #inline: "<% @tasks.each do |p| %><p><%= p.name %></p><% end %>"
+      end
+        format.csv 
+    end  
   end
 
   # GET /tasks/1 or /tasks/1.json
   def show
-      
-  end
+     
+  end      
 
   # GET /tasks/new
   def new
@@ -25,11 +42,13 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    #@task = Task.new(task_params)
-    @task = current_user.tasks.build(task_params)
+    @task = Task.new(task_params)
+    #@task = current_user.tasks.build(task_params)
     respond_to do |format|
       if @task.save
+        #UserMailer.with(user:current_user, task: @task).user_created.deliver_now
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
+        format.js
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }

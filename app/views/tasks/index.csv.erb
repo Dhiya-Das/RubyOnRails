@@ -1,0 +1,6 @@
+<% @tasks.each do |task| %>
+<%= name = task.name %>
+<%= due_date = task.due_date %>
+<%= description = task.description %>
+<%= [name.to_s, due_date.to_s, description.to_s].join(";") %>
+<% end %>

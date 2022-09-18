@@ -13,3 +13,4 @@
  *= require_tree .
  *= require_self
  */
+config.assets.precompile += %w( pdf.css )

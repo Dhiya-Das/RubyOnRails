@@ -1,4 +1,4 @@
-<%= form_with(model: task) do |form| %>
+<%= form_for @task, remote: true, html: {class: "update"} do |form| %>
   <% if task.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -32,6 +32,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "update", remote: true %>
   </div>
 <% end %>

@@ -30,4 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: " Hai! Lets create tasks"
+  task: "Tasks"
+  user: "Users"
+  sign_in: "Sign In"
+  sign_out: "Sign Out"
+  home: "Go to Home"
+  edit: "Edit User / Delete User"
+  sign_up: "Sign Up"
+  new_task: "New Task"
+  show_task: "Show this task"
+  edit_task: "Edit this task"
+  back_task: "Back to tasks"
+  des_task: "Destroy this task"
+  pdf: "Export as PDF"
+  csv: "Export as CSV"
+  
+

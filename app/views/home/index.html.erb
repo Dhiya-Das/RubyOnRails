@@ -14,8 +14,9 @@
 </style>
 
 <div class="home">
-    <h1> Hai! Lets create tasks </h1> <br> <br>
+    <h1> <%= t 'hello' %> </h1>
+    <br> <br>
     
-   <div class="button"> <%= link_to 'Tasks', tasks_path %> </div>
-   <div class="button"> <%= link_to 'Users', users_path %> </div>
+   <div class="button"> <%= link_to t('task'), tasks_path %> </div>
+   <div class="button"> <%= link_to t('user'), users_path %> </div>
 </div>
