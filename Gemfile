@@ -5,6 +5,11 @@ ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem 'rails-i18n'
+gem 'rspec-rails'
+gem 'ffi'
+
+gem 'rufus-scheduler'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
@@ -72,3 +77,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf'
+gem 'jquery-rails'
